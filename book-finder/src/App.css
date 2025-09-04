@@ -1,42 +1,92 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* 🌙 Ultra-Soft Dark Mode */
+body.dark-mode {
+  background-color: #484b55; /* Google-style dark grey */
+  color: #e4e6eb;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body.dark-mode .ant-layout {
+  background: #3c3e43 !important;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+body.dark-mode .ant-layout-header {
+  background: linear-gradient(90deg, #2b2b2b, #3a3a3a) !important;
+}
+
+body.dark-mode .ant-typography,
+body.dark-mode .ant-empty-description {
+  color: #e4e6eb !important;
+}
+
+body.dark-mode .ant-card {
+  background: #2a2d31 !important; /* soft neutral */
+  border: 1px solid #3a3d42 !important;
+}
+
+body.dark-mode .ant-card-meta-title,
+body.dark-mode .ant-card-meta-description {
+  color: #f5f5f5 !important;
+}
+
+body.dark-mode input,
+body.dark-mode .ant-input,
+body.dark-mode .ant-select-selector {
+  background: #303338 !important; /* softer grey */
+  color: #f0f0f0 !important;
+  border-color: #474a50 !important;
+}
+
+body.dark-mode .ant-modal-content {
+  background: #2a2d31 !important;
+  color: #e4e6eb !important;
+  border-radius: 10px;
+}
+
+body.dark-mode .ant-btn-primary {
+  background: linear-gradient(90deg, #40a9ff, #73d13d) !important;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* 📱 Mobile Responsiveness */
+@media (max-width: 768px) {
+  .ant-form-item {
+    margin-bottom: 12px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .ant-input,
+  .ant-select-selector {
+    font-size: 14px !important;
+    height: 40px !important;
+  }
+
+  .ant-btn {
+    height: 40px !important;
+    font-size: 14px !important;
+  }
+
+  .ant-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto;
+  }
+
+  .ant-row {
+    justify-content: center !important;
+  }
+
+  .ant-layout-header h3 {
+    font-size: 18px !important;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* ✨ Smooth hover effects */
+.ant-card {
+  transition: all 0.3s ease-in-out;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.ant-card:hover {
+  transform: scale(1.02);
+  background: #6b717b !important; /* gentle lift */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
 }
